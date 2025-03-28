@@ -1,0 +1,491 @@
+:root {
+    --primary-color: #6366F1;
+    --primary-hover: #4F46E5;
+    --background-color: #F9FAFB;
+    --card-background: #FFFFFF;
+    --text-color: #1F2937;
+    --text-secondary: #6B7280;
+    --border-color: #E5E7EB;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --danger-color: #EF4444;
+    --danger-hover: #DC2626;
+    --success-color: #10B981;
+    --success-hover: #059669;
+    --input-focus: #EEF2FF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Unbounded', cursive;
+    color: var(--text-color);
+}
+
+.container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        padding: 0 2rem;
+    }
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Auth Screen */
+.auth-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.auth-container {
+    background-color: var(--card-background);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px var(--shadow-color);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.auth-container .logo {
+    margin-bottom: 1.5rem;
+    height: 60px;
+}
+
+.auth-form {
+    text-align: left;
+}
+
+/* Header */
+header {
+    background-color: var(--card-background);
+    padding: 1rem 0;
+    box-shadow: 0 1px 3px var(--shadow-color);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 40px;
+    transition: transform 0.2s;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.logout-btn {
+    background-color: var(--danger-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.logout-btn:hover {
+    background-color: var(--danger-hover);
+    transform: translateY(-1px);
+}
+
+/* Main Content */
+main {
+    padding: 2rem 0;
+}
+
+.products {
+    margin-bottom: 2rem;
+}
+
+h1 {
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+    font-size: 2.25rem;
+}
+
+h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+/* Forms */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: var(--input-focus);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-1px);
+}
+
+/* Discount and Commission Buttons */
+.promo-buttons,
+.commission-buttons {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.promo-btn,
+.commission-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    flex: 1;
+    min-width: 60px;
+    transition: all 0.2s;
+}
+
+.promo-btn:hover,
+.commission-btn:hover {
+    background-color: var(--border-color);
+    transform: translateY(-1px);
+}
+
+.promo-btn.active,
+.commission-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.custom-promo,
+.custom-commission {
+    margin-top: 0.75rem;
+}
+
+/* Product Cards */
+.add-product {
+    background-color: var(--card-background);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px var(--shadow-color);
+    margin-bottom: 2rem;
+}
+
+.product-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 400px), 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.product-card {
+    background-color: var(--card-background);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px var(--shadow-color);
+    transition: transform 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-2px);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.card-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.download-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.download-card,
+.download-chart {
+    padding: 0.5rem;
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid currentColor;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+}
+
+.download-card:hover,
+.download-chart:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    transform: translateY(-1px);
+}
+
+.download-card span,
+.download-chart span {
+    display: none;
+}
+
+.price-info {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: var(--background-color);
+    border-radius: 0.5rem;
+}
+
+.price-info p {
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price-info p:last-child {
+    margin-bottom: 0;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.price-info span {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.distribution-info {
+    margin-bottom: 1.5rem;
+}
+
+.roles-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.remaining-text {
+    font-weight: 600;
+    margin: 0;
+    color: var(--text-color);
+}
+
+.add-role {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    background-color: var(--success-color);
+}
+
+.add-role:hover {
+    background-color: var(--success-hover);
+}
+
+.roles-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.role-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    background-color: var(--background-color);
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+}
+
+.role-item:hover {
+    background-color: #F3F4F6;
+}
+
+.role-input {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.role-input input {
+    width: 70px;
+    padding: 0.375rem;
+    text-align: center;
+    font-size: 0.875rem;
+}
+
+.role-input span {
+    min-width: 100px;
+    text-align: right;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.delete-role {
+    padding: 0.25rem 0.5rem;
+    font-size: 1.25rem;
+    background-color: transparent;
+    color: var(--danger-color);
+    border: none;
+    border-radius: 0.375rem;
+    transition: all 0.2s;
+}
+
+.delete-role:hover {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+.chart-wrapper {
+    height: 200px;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background-color: var(--background-color);
+    border-radius: 0.5rem;
+}
+
+.delete-product {
+    background-color: var(--danger-color);
+    width: 100%;
+}
+
+.delete-product:hover {
+    background-color: var(--danger-hover);
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+    h1 {
+        font-size: 1.875rem;
+    }
+
+    .product-card {
+        padding: 1rem;
+    }
+
+    .role-item {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+    }
+
+    .role-input {
+        justify-content: space-between;
+    }
+
+    .role-input span {
+        min-width: auto;
+    }
+
+    .promo-buttons,
+    .commission-buttons {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 640px) {
+    .download-card span,
+    .download-chart span {
+        display: inline;
+    }
+    
+    .download-card,
+    .download-chart {
+        padding: 0.5rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    .download-card {
+        width: 100%;
+    }
+
+    .roles-header {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .add-role {
+        width: 100%;
+    }
+}
